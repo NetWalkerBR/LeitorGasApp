@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen">
+
+    <!-- Top accent bar -->
+    <View
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/orange_accent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- App title row -->
+    <TextView
+        android:id="@+id/tv_header_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cond. Ile de France"
+        android:textColor="@color/navy_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_header_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LEITURA DE GÁS"
+        android:textColor="@color/orange_accent"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.12"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- History button (top-right) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_history"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📋 Histórico"
+        android:textColor="@color/navy_dark"
+        android:textSize="13sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_bar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Resume banner (only visible when there's an open cycle) -->
+    <TextView
+        android:id="@+id/tv_resume_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_accent"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_sub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Date card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.44">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="28dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirme a data de hoje"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tv_day_of_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/navy_dark"
+                android:textSize="72sp"
+                android:textStyle="bold"
+                android:includeFontPadding="false" />
+
+            <TextView
+                android:id="@+id/tv_month_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/navy_dark"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="3dp"
+                android:background="@color/orange_accent"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esta é a competência que será\nregistrada na leitura."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="✓  Confirmar e Iniciar Leitura"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:backgroundTint="@color/navy_dark" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Exit button anchored to bottom -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_exit"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sair do aplicativo"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:layout_marginBottom="24dp"
+        app:rippleColor="@color/divider_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.GasLeitor" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/navy_dark</item>
+        <item name="colorPrimaryVariant">@color/navy_medium</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/navy_dark</item>
+        <item name="android:windowBackground">@color/bg_screen</item>
+    </style>
+</resources>

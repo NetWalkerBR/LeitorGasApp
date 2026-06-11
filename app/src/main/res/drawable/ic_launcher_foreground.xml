@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#1A2744"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <!-- Flame shape (outer, orange) -->
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M54,20 C54,20 42,36 42,48 C42,54 46,58 50,60 C48,54 50,46 54,42 C58,46 60,54 58,60 C62,58 66,54 66,48 C66,36 54,20 54,20 Z" />
+
+    <!-- Flame shape (inner, yellow) -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M54,36 C54,36 48,46 48,52 C48,56 51,59 54,60 C57,59 60,56 60,52 C60,46 54,36 54,36 Z" />
+
+    <!-- Gas meter body (rect converted to path: x=36 y=64 w=36 h=24 rx=4) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,64 L68,64 Q72,64 72,68 L72,84 Q72,88 68,88 L40,88 Q36,88 36,84 L36,68 Q36,64 40,64 Z" />
+
+    <!-- Meter display lines -->
+    <path
+        android:fillColor="#1A2744"
+        android:strokeColor="#1A2744"
+        android:strokeWidth="2"
+        android:pathData="M42,72 H66" />
+    <path
+        android:fillColor="#1A2744"
+        android:strokeColor="#1A2744"
+        android:strokeWidth="2"
+        android:pathData="M42,77 H66" />
+    <path
+        android:fillColor="#1A2744"
+        android:strokeColor="#1A2744"
+        android:strokeWidth="2"
+        android:pathData="M42,82 H58" />
+
+</vector>
