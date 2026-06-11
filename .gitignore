@@ -32,3 +32,9 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Gradle wrapper jar (downloaded automatically)
+gradle/wrapper/gradle-wrapper.jar
+
+# Kotlin
+.kotlin/
